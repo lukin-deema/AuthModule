@@ -1,6 +1,6 @@
 import React from 'react';
 import UserFilterConnect from '../containers/UsersFilter';
-import AddNewUserConnect from '../containers/AddNewUser';
+import AddNewUserConnect from '../containers/AddUser';
 
 const App = () => (
      <div>
