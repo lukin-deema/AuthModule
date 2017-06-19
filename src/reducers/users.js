@@ -17,8 +17,16 @@ const users = (state = [{
                     deleted: false
                 }
             ];
+        case constants.TOGGLE_USERS:
+            return state.map(x => {
+                if (action.id === x.id){
+                    x.deleted = !x.deleted;
+                    return x;
+                }
+                return x;
+            });
         default:
-            return state
+            return state;
     }
 };
 

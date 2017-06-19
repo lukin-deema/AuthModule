@@ -6,11 +6,20 @@ export const addNewUser = (user) => {
         id: user.id,
         email: user.email,
         password: user.password,
+        deleted: false,
     }
 };
 
-export const toggleVisibility = (visibilityFilter)=>{
+export const toggleVisibility = (id)=>{
     return {
+        type: constants.TOGGLE_USERS,
+        id
+    }
+};
+
+export const toggleUserFilter = (visibilityFilter) => {
+    return {
+        type: constants.SET_VISIBILITY_FILTER,
         visibilityFilter
     }
 };

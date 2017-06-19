@@ -7,11 +7,12 @@ const UserList = ({ users, onVisibilityClick }) => (
     </ul>
 );
 const renderUsers=(users, onVisibilityClick)=>{
-    return users.map((user, idx)=>
-        <li key={idx} onClick={() => onVisibilityClick(user.id)}>
-            {user.email }
-        </li>
-    )
+    return users.map((user, idx)=> {
+        const style = {"textDecoration": user.deleted ? "line-through" : "underline"};
+        return (<li key={idx} onClick={() => onVisibilityClick(user.id)}>
+            <span style={style}>{user.email}</span>
+        </li>)
+    })
 };
 
 UserList.propTypes = {
