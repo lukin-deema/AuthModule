@@ -20,6 +20,9 @@
     "css-loader": "^0.23.1",
     "keymirror": "^0.1.1",
     "material-ui": "^0.18.5",
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.3",
     "node-sass": "^3.4.2",
     "path": "^0.12.7",
     "react": "^15.4.2",
@@ -53,7 +56,8 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base --hot --inline -src --port 8082 ",
     "webpack": "webpack",
-    "server": "node wServer.js"
+    "server2": "node wServer.js",
+    "server": "node server.js"
   },
   "author": "deema-lukin",
   "license": "ISC",
