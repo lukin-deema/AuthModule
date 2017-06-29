@@ -1,9 +1,11 @@
+import keyMirror from 'keymirror';
 
-export const REGISTER_NEW = "REGISTER_NEW";
-
-export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
-export const VISIBLE_ALL = 'VISIBLE_ALL';
-export const VISIBLE_REGISTERED = 'VISIBLE_REGISTERED';
-export const VISIBLE_DELETED = 'VISIBLE_DELETED';
-
-export const TOGGLE_USERS = 'TOGGLE_USERS';
+module.exports = keyMirror({
+    REGISTER_NEW: null,
+    SET_VISIBILITY_FILTER: null,
+    VISIBLE_ALL: null,
+    VISIBLE_REGISTERED: null,
+    VISIBLE_DELETED: null,
+    TOGGLE_USERS: null,
+    KEY_USERS: null
+});

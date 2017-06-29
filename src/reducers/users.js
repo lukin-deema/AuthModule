@@ -1,14 +1,11 @@
 import * as constants from '../constants';
+import * as localStore from '../api/localStore';
 
-const users = (state = [{
-    id: 1,
-    email: 'ww@cva.s',
-    password: 'pa',
-    deleted: false
-}], action) => {
+const users = (state = localStore.load(constants.KEY_USERS, []), action) => {
+    let users;
     switch (action.type) {
         case constants.REGISTER_NEW:
-            return [
+            users = [
                 ...state,
                 {
                     id: action.id,
@@ -17,14 +14,18 @@ const users = (state = [{
                     deleted: false
                 }
             ];
+            localStore.save(constants.KEY_USERS, users);
+            return users;
         case constants.TOGGLE_USERS:
-            return state.map(x => {
-                if (action.id === x.id){
+            users = state.map(x => {
+                if (action.id === x.id) {
                     x.deleted = !x.deleted;
                     return x;
                 }
                 return x;
             });
+            localStore.save(constants.KEY_USERS, users);
+            return users;
         default:
             return state;
     }

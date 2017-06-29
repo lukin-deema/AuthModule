@@ -10,7 +10,7 @@ export const addNewUser = (user) => {
     }
 };
 
-export const toggleVisibility = (id)=>{
+export const toggleVisibility = (id) => {
     return {
         type: constants.TOGGLE_USERS,
         id
