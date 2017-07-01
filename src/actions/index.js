@@ -30,4 +30,11 @@ export const addNote = (note)=>{
         id: note.id,
         text: note.text,
     }
-}
+};
+
+export const removeNote = (id)=>{
+    return {
+        type: constants.REMOVE_NOTE,
+        id: id,
+    }
+};

@@ -4,9 +4,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {addNewUser} from '../actions';
 
 class UsersAdd extends React.Component {
-    constructor(store) {
+    constructor({dispatch, nextIndex}) {
         super();
-        this.state = {store};
+        this.state = {
+            dispatch,
+            nextIndex
+        };
+    }
+
+    componentWillReceiveProps({nextIndex}){
+        this.setState({nextIndex})
     }
 
     onSubmit = e => {
@@ -17,8 +24,8 @@ class UsersAdd extends React.Component {
         if (!email || !pass || !passConfirm || pass !== passConfirm) {
             return;
         }
-        this.state.store.dispatch(addNewUser({
-            id: this.state.store.usersNextIndex,
+        this.state.dispatch(addNewUser({
+            id: this.state.usersNextIndex,
             email: this.refs.email.input.value,
             password: this.refs.pass.input.value
         }));

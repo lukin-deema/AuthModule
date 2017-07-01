@@ -12,4 +12,5 @@ module.exports = keyMirror({
     KEY_NOTE: null,
 
     ADD_NOTE: null,
+    REMOVE_NOTE: null,
 });

@@ -4,9 +4,9 @@ import {List, ListItem} from 'material-ui/List';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
 
 const UserList = ({ users, onVisibilityClick }) => (
-    <ul>
+    <List>
         {renderUsers(users, onVisibilityClick)}
-    </ul>
+    </List>
 );
 const renderUsers=(users, onVisibilityClick)=>{
     return users.map((user, idx)=> {

@@ -1,17 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {List, ListItem} from 'material-ui/List';
+import ContentDelete from 'material-ui/svg-icons/content/delete-sweep';
 
-const NoteList = ({ notes, onVisibilityClick }) => (
-    <ul>
-        {renderNotes(notes, onVisibilityClick)}
-    </ul>
+import {removeNote} from '../actions'
+
+const NoteList = ({notes, dispatch}) => (
+    <List>
+        {renderNotes(notes, dispatch)}
+    </List>
 );
-const renderNotes=(notes, onVisibilityClick)=>{
-    return notes.map((user, idx)=> {
+const onRemoveClick = (dispatch, id) => {
+    dispatch(removeNote(id))
+};
+
+const renderNotes = (notes, dispatch) => {
+    return notes.map((node, idx) => {
         return (<ListItem
             key={idx}
-            primaryText={user.text}
+            primaryText={node.text}
+            rightIcon={<ContentDelete
+                onClick={() => onRemoveClick(dispatch, node.id)}/>
+            }
         >
         </ListItem>)
     })

@@ -7,7 +7,7 @@ const calculateNextIndex = (state) => {
 };
 
 const mapStateToProps = (state) => ({
-    usersNextIndex: calculateNextIndex(state)
+    nextIndex: calculateNextIndex(state)
 });
 
 export default connect(mapStateToProps)(UsersAdd);
