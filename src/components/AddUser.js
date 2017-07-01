@@ -1,4 +1,6 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import {addNewUser} from '../actions';
 
 class AddUser extends React.Component {
@@ -9,32 +11,47 @@ class AddUser extends React.Component {
 
     onSubmit = e => {
         e.preventDefault();
-        const email = this.refs.email.value.trim();
-        const pass = this.refs.pass.value.trim();
-        const passConfirm = this.refs.passConfirm.value.trim();
+        const email = this.refs.email.input.value.trim();
+        const pass = this.refs.pass.input.value.trim();
+        const passConfirm = this.refs.passConfirm.input.value.trim();
         if (!email || !pass || !passConfirm || pass !== passConfirm) {
             return;
         }
         this.state.store.dispatch(addNewUser({
             id: this.state.store.usersNextIndex,
-            email: this.refs.email.value,
-            password: this.refs.pass.value
+            email: this.refs.email.input.value,
+            password: this.refs.pass.input.value
         }));
-        this.refs.email.value = '';
-        this.refs.pass.value = '';
-        this.refs.passConfirm.value = '';
+        this.refs.email.input.value = '';
+        this.refs.pass.input.value = '';
+        this.refs.passConfirm.input.value = '';
     };
 
     render() {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    <span>Email:</span><input ref="email" defaultValue="asd@aqsd.c"/><br/>
-                    <span>Pass:</span><input ref="pass" defaultValue="qweqwe"/><br/>
-                    <span>Confirm:</span><input ref="passConfirm" defaultValue="qweqwe"/><br/>
-                    <button type="submit">
-                        Add user
-                    </button>
+                    <TextField
+                        defaultValue="asd@aqsd.c"
+                        ref="email"
+                        hintText="email"
+                        floatingLabelText="Email"
+                    /><br/>
+                    <TextField
+                        ref="pass"
+                        hintText="password"
+                        floatingLabelText="Password"
+                        type="password"
+                        defaultValue="qweqwe"
+                    /><br/>
+                    <TextField
+                        ref="passConfirm"
+                        hintText="password"
+                        floatingLabelText="Password"
+                        type="password"
+                        defaultValue="qweqwe"
+                    /><br/>
+                    <RaisedButton type="submit" label="Add user" primary={true} style={{margin: 12}} />
                 </form>
             </div>
         )

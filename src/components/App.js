@@ -6,8 +6,8 @@ import Footer from './Footer';
 const App = () => (
      <div>
          <AddNewUserConnect/>
-         <UserFilterConnect/>
          <Footer/>
+         <UserFilterConnect/>
      </div>
 );
 export default App;

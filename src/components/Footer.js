@@ -4,18 +4,9 @@ import * as constants from '../constants';
 
 const Footer = () => (
     <p>
-        {"Show: "}
-        <FilterLink filter={constants.VISIBLE_ALL}>
-            All
-        </FilterLink>
-        {", "}
-        <FilterLink filter={constants.VISIBLE_REGISTERED}>
-            Active
-        </FilterLink>
-        {", "}
-        <FilterLink filter={constants.VISIBLE_DELETED}>
-            Completed
-        </FilterLink>
+        <FilterLink filter={constants.VISIBLE_REGISTERED}/>
+        <FilterLink filter={constants.VISIBLE_DELETED}/>
+        <FilterLink filter={constants.VISIBLE_ALL}/>
     </p>
 );
 

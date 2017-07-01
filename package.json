@@ -1,7 +1,7 @@
 {
-  "name": "AuthModule",
+  "name": "FileSystem",
   "version": "0.1.0",
-  "description": "Auth Module",
+  "description": "File system",
   "main": "webpack.config.js",
   "dependencies": {
     "axios": "^0.12.0",
@@ -19,11 +19,13 @@
     "compression": "^1.6.2",
     "css-loader": "^0.23.1",
     "keymirror": "^0.1.1",
+    "material-ui": "^0.18.5",
     "node-sass": "^3.4.2",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.5",
+    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.1"
@@ -50,5 +52,5 @@
   },
   "author": "deema-lukin",
   "license": "ISC",
-  "repository": "git@github.com:lukin-deema/AuthModule.git"
+  "repository": "git@github.com:lukin-deema/FileSystem.git"
 }

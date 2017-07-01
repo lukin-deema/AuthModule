@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {List, ListItem} from 'material-ui/List';
+import ActionGrade from 'material-ui/svg-icons/action/grade';
 
 const UserList = ({ users, onVisibilityClick }) => (
     <ul>
@@ -8,10 +10,13 @@ const UserList = ({ users, onVisibilityClick }) => (
 );
 const renderUsers=(users, onVisibilityClick)=>{
     return users.map((user, idx)=> {
-        const style = {"textDecoration": user.deleted ? "line-through" : "underline"};
-        return (<li key={idx} onClick={() => onVisibilityClick(user.id)}>
-            <span style={style}>{user.email}</span>
-        </li>)
+        return (<ListItem
+                key={idx}
+                primaryText={user.email}
+                onClick={() => onVisibilityClick(user.id)}
+                leftIcon={user.deleted?<ActionGrade color="white" />:<ActionGrade color="green" />}
+        >
+        </ListItem>)
     })
 };
 
