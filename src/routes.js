@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import {Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 
-import UserRoute from './components/UserRoute';
-import NoteRoute from './components/NoteRoute';
+import UsersRoute from './components/UsersRoute';
+import NotesRoute from './components/NoteRoute';
 
 // see https://reacttraining.com/react-router/web/example/route-config
 const RouteWithSubRoutes = (route) => (
@@ -14,10 +16,10 @@ const RouteWithSubRoutes = (route) => (
 const routes = [
     {
         path: "/user",
-        component: UserRoute
+        component: UsersRoute
     },{
         path: "/note",
-        component: NoteRoute
+        component: NotesRoute
     }
 ];
 const renderRouter = ()=>{
@@ -27,23 +29,33 @@ const renderRouter = ()=>{
 };
 const renderMenu=()=>{
     return (
-        <ul>
-            <li><Link to="/user">User</Link></li>
-            <li><Link to="/note">Note</Link></li>
-        </ul>
+        <Toolbar>
+            <ToolbarGroup>
+                <Link to="/user">
+                    <RaisedButton label="User"
+                                  primary={true}
+                                  style={{marginRight:5}}
+                    />
+                </Link>
+                <Link to="/note">
+                    <RaisedButton label="Note" primary={true}/>
+                </Link>
+            </ToolbarGroup>
+        </Toolbar>
     )
 };
 
 
 export default ()=> {
     return (
-        <Router>
-            <div>
-                {renderMenu()}
-                <hr/>
-
-                {renderRouter()}
-            </div>
-        </Router>
+        <div style={{minWidth: '500px',width:'50%',margin:'auto'}}>
+            <Router>
+                <div>
+                    {renderMenu()}
+                    <hr/>
+                    {renderRouter()}
+                </div>
+            </Router>
+        </div>
     )
 }

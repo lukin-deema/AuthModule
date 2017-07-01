@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {addNewUser} from '../actions';
 
-class AddUser extends React.Component {
+class UsersAdd extends React.Component {
     constructor(store) {
         super();
         this.state = {store};
@@ -32,12 +32,14 @@ class AddUser extends React.Component {
             <div>
                 <form onSubmit={this.onSubmit}>
                     <TextField
+                        fullWidth={true}
                         defaultValue="asd@aqsd.c"
                         ref="email"
                         hintText="email"
                         floatingLabelText="Email"
                     /><br/>
                     <TextField
+                        fullWidth={true}
                         ref="pass"
                         hintText="password"
                         floatingLabelText="Password"
@@ -45,6 +47,7 @@ class AddUser extends React.Component {
                         defaultValue="qweqwe"
                     /><br/>
                     <TextField
+                        fullWidth={true}
                         ref="passConfirm"
                         hintText="password"
                         floatingLabelText="Password"
@@ -58,4 +61,4 @@ class AddUser extends React.Component {
     }
 }
 
-export default AddUser;
+export default UsersAdd;
