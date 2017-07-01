@@ -3,11 +3,11 @@ import UserFilterConnect from '../containers/UsersFilter';
 import AddNewUserConnect from '../containers/AddUser';
 import Footer from './Footer';
 
-const App = () => (
+const UserRoute = () => (
      <div>
          <AddNewUserConnect/>
          <Footer/>
          <UserFilterConnect/>
      </div>
 );
-export default App;
+export default UserRoute;
