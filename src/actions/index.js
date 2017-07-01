@@ -23,3 +23,11 @@ export const toggleUserFilter = (visibilityFilter) => {
         visibilityFilter
     }
 };
+
+export const addNote = (note)=>{
+    return {
+        type: constants.ADD_NOTE,
+        id: note.id,
+        text: note.text,
+    }
+}

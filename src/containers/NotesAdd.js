@@ -1,13 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import UsersAdd from '../components/UsersAdd';
+import NotesAdd from '../components/NotesAdd';
 
 const calculateNextIndex = (state) => {
-    return Math.max(0, ...state.users.map(x => x.id)) + 1;
+    const s = Math.max(0, ...state.notes.map(x => x.id)) + 1;
+    return s
 };
 
 const mapStateToProps = (state) => ({
     usersNextIndex: calculateNextIndex(state)
 });
 
-export default connect(mapStateToProps)(UsersAdd);
+export default connect(mapStateToProps)(NotesAdd);

@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 
 import UsersRoute from './components/UsersRoute';
-import NotesRoute from './components/NoteRoute';
+import NotesRoute from './components/NotesRoute';
 
 // see https://reacttraining.com/react-router/web/example/route-config
 const RouteWithSubRoutes = (route) => (
