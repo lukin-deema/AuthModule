@@ -51,7 +51,9 @@
     "style-loader": "^0.13.0"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base --hot --inline -src --port 8082 "
+    "dev": "webpack-dev-server --content-base --hot --inline -src --port 8082 ",
+    "webpack": "webpack",
+    "server": "node wServer.js"
   },
   "author": "deema-lukin",
   "license": "ISC",

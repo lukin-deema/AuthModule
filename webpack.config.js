@@ -3,14 +3,12 @@ const path = require('path');
 
 module.exports = {
     entry: path.join(__dirname, "src", "app.js"),
-    devtool: "inline-sourcemap",
+    devtool: "inline-sourcemap", //"source-map",//
     context: path.join(__dirname, "src"),
     output: {
-        path: "/bin",
-        publicPath: '/bin',
-        filename: 'bundle.js',
+        path: path.join(__dirname, "public"),
+        filename: 'bundle.min.js',
     },
-    watch:true,
     module: {
         loaders: [
             {
@@ -34,4 +32,4 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]
-}
+};
