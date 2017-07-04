@@ -1,6 +1,7 @@
 # my
 .idea
 public/bundle.min.js
+src/bundle.min.js
 
 
 # /my

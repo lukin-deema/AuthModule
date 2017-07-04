@@ -26,8 +26,12 @@ module.exports = {
         ]
     },
     devServer: {
+        publicPath: 'http://127.0.0.1:8083/',
+        contentBase: __dirname + "/src/",
         hot: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        inline: true,
+        headers: { 'Access-Control-Allow-Origin': '*' }
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

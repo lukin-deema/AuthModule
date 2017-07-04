@@ -1,23 +1,20 @@
 import * as constants from '../constants';
-import * as localStore from '../api/localStore';
+import * as noteApi from '../api/notes';
 
-let note = (state = localStore.load(constants.KEY_NOTE, []), action) => {
+let note = (state = noteApi.get(), action) => {
     let notes;
     switch (action.type) {
         case constants.ADD_NOTE:
-            notes = [
-                ...state,
-                {
-                    id: action.id,
-                    text: action.text
-                }
-            ];
-
-            localStore.save(constants.KEY_NOTE, notes);
+            const newNote = {
+                id: action.id,
+                text: action.text
+            };
+            notes = [ ...state, newNote ];
+            noteApi.create(newNote);
             return notes;
         case constants.REMOVE_NOTE:
             notes = state.filter(x => x.id !== action.id);
-            localStore.save(constants.KEY_NOTE, notes);
+            noteApi.remove(action.id);
             return notes;
         default:
             return state;
