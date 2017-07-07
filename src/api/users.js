@@ -30,7 +30,7 @@ function get() {
 
 function login(email, password) {
     const user = get().find(x => x.email === email && x.password === password);
-    if(user) {
+    if (user) {
         localStore.save(constants.KEY_CURRENT_USER, user);
         return user;
     } else {
@@ -38,7 +38,7 @@ function login(email, password) {
     }
 }
 
-function logout(){
+function logout() {
     localStore.remove(constants.KEY_CURRENT_USER);
     return false;
 }

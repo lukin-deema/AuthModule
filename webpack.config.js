@@ -20,9 +20,9 @@ module.exports = {
                     plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
                 },
             },
-            { test: /\.scss$/, loader: 'style!css!sass' },
-            { test: /\.css$/, loader: "style!css" },
-            { test: /\.html$/, loader: 'html' }
+            {test: /\.scss$/, loader: 'style!css!sass'},
+            {test: /\.css$/, loader: "style!css"},
+            {test: /\.html$/, loader: 'html'}
         ]
     },
     devServer: {
@@ -31,7 +31,7 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
         inline: true,
-        headers: { 'Access-Control-Allow-Origin': '*' }
+        headers: {'Access-Control-Allow-Origin': '*'}
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

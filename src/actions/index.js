@@ -47,7 +47,7 @@ export const login = (user) => {
     }
 };
 
-export const logout = (user)=>{
+export const logout = (user) => {
     return {
         type: constants.LOGOUT,
         email: user.email,

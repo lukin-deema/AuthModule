@@ -1,5 +1,5 @@
-import { connect } from 'react-redux';
-import { toggleUserFilter } from '../actions';
+import {connect} from 'react-redux';
+import {toggleUserFilter} from '../actions';
 import Link from '../components/Link';
 
 const mapStateToProps = (state, ownProps) => ({

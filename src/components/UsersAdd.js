@@ -12,7 +12,7 @@ class UsersAdd extends React.Component {
         };
     }
 
-    componentWillReceiveProps({nextIndex}){
+    componentWillReceiveProps({nextIndex}) {
         this.setState({nextIndex})
     }
 
@@ -61,7 +61,7 @@ class UsersAdd extends React.Component {
                         type="password"
                         defaultValue="qweqwe"
                     /><br/>
-                    <RaisedButton type="submit" label="Add user" primary={true} style={{margin: 12}} />
+                    <RaisedButton type="submit" label="Add user" primary={true} style={{margin: 12}}/>
                 </form>
             </div>
         )

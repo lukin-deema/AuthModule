@@ -9,7 +9,7 @@ let note = (state = noteApi.get(), action) => {
                 id: action.id,
                 text: action.text
             };
-            notes = [ ...state, newNote ];
+            notes = [...state, newNote];
             noteApi.create(newNote);
             return notes;
         case constants.REMOVE_NOTE:

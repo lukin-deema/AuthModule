@@ -1,7 +1,7 @@
-import { HashRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom'
+import {HashRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom'
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
+import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
 
 import UsersRoute from './components/UsersRoute';
 import RegisterUserRoute from './components/RegisterUserRoute';
@@ -9,16 +9,16 @@ import LoginUserRoute from './components/LoginUserRoute';
 import AuthRoute from './components/AuthRoute';
 import NotesRoute from './components/NotesRoute';
 
-import { logout } from './actions';
+import {logout} from './actions';
 
 // see https://reacttraining.com/react-router/web/example/route-config
 
-const renderRouter = (login, dispatch)=>{
+const renderRouter = (login, dispatch) => {
     return (<div>
         <Route path="/register" component={RegisterUserRoute}/>
         <Switch>
             <Route path="/login" component={LoginUserRoute}/>
-            <Route path="/logout" render={()=>{
+            <Route path="/logout" render={() => {
                 dispatch(logout(login && login.email));
                 return <Redirect to="/login"/>;
             }}/>
@@ -30,14 +30,14 @@ const renderRouter = (login, dispatch)=>{
         </Switch>
     </div>)
 };
-const onEnterAuth=(login, component)=>{
+const onEnterAuth = (login, component) => {
     return () => {
-        return login ?  component
+        return login ? component
             : <Redirect to="/register"/>
     };
 };
 
-const button=(login)=>{
+const button = (login) => {
     if (!login) {
         return <Link to="/login">
             <RaisedButton label="Login"
@@ -45,17 +45,17 @@ const button=(login)=>{
                           style={{marginRight: 5}}
             />
         </Link>
-    }else{
+    } else {
         return <Link to="/logout">
-                <RaisedButton label="Logout"
-                              primary={true}
-                              style={{marginRight:5}}
-                />
-            </Link>
+            <RaisedButton label="Logout"
+                          primary={true}
+                          style={{marginRight: 5}}
+            />
+        </Link>
     }
 }
 
-const renderMenu=(login)=>{
+const renderMenu = (login) => {
     return (
         <Toolbar>
             <ToolbarGroup>
@@ -69,13 +69,13 @@ const renderMenu=(login)=>{
                 <Link to="/auth">
                     <RaisedButton label="auth"
                                   primary={true}
-                                  style={{marginRight:5}}
+                                  style={{marginRight: 5}}
                     />
                 </Link>
                 <Link to="/auth/user">
                     <RaisedButton label="User"
                                   primary={true}
-                                  style={{marginRight:5}}
+                                  style={{marginRight: 5}}
                     />
                 </Link>
                 <Link to="/auth/note">
@@ -90,12 +90,15 @@ const renderMenu=(login)=>{
 export default class RouteApp extends React.Component {
     constructor({login, dispatch}) {
         super();
-        this.state = {login,dispatch
+        this.state = {
+            login, dispatch
         };
     }
-    componentWillReceiveProps({login, dispatch}){
+
+    componentWillReceiveProps({login, dispatch}) {
         this.setState({login, dispatch})
     }
+
     render() {
         return (
             <div style={{minWidth: '500px', width: '50%', margin: 'auto'}}>

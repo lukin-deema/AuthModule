@@ -14,7 +14,7 @@ class NoteAdd extends React.Component {
         };
     }
 
-    componentWillReceiveProps({nextIndex}){
+    componentWillReceiveProps({nextIndex}) {
         this.setState({nextIndex})
     }
 

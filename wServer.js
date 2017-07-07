@@ -7,7 +7,7 @@ app.use('/', express.static('public'));
 
 const server = http.createServer(app);
 
-server.listen(app.get('port'),function() {
+server.listen(app.get('port'), function () {
     console.log('Server listening on port ' + server.address().port);
 });
 

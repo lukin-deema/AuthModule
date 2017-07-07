@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import { toggleVisibility } from '../actions'
+import {connect} from 'react-redux'
+import {toggleVisibility} from '../actions'
 import UserList from '../components/UsersList';
 
 import * as constants from '../constants';

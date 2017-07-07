@@ -1,14 +1,12 @@
-import { connect } from 'react-redux';
-import { login } from '../actions';
+import {connect} from 'react-redux';
+import {login} from '../actions';
 import UsersLogin from '../components/UsersLogin';
 
-const mapStateToProps = (state, ownProps) => ({
-
-});
+const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: ({email, password}) => {
-        dispatch(login({email,password}))
+        dispatch(login({email, password}))
     }
 });
 
