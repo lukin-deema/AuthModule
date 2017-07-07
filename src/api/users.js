@@ -28,7 +28,28 @@ function get() {
     return localStore.load(constants.KEY_USERS, []);
 }
 
+function login(email, password) {
+    const user = get().find(x => x.email === email && x.password === password);
+    if(user) {
+        localStore.save(constants.KEY_CURRENT_USER, user);
+        return user;
+    } else {
+        return false;
+    }
+}
+
+function logout(){
+    localStore.remove(constants.KEY_CURRENT_USER);
+    return false;
+}
+function getCurrentUser() {
+    return localStore.load(constants.KEY_CURRENT_USER, false);
+}
+
 module.exports = {
+    login,
+    logout,
+    getCurrentUser,
     create,
     update,
     remove,

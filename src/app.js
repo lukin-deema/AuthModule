@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import routes from './routes';
+import Routes from './containers/Routes';
 import reducers from './reducers';
 
 injectTapEventPlugin();
@@ -14,7 +14,7 @@ const store = createStore(reducers);
 render(
     <MuiThemeProvider>
         <Provider store={store}>
-            {routes()}
+            <Routes store={store}/>
         </Provider>
     </MuiThemeProvider>,
     document.getElementById('root')

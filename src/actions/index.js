@@ -24,7 +24,7 @@ export const toggleUserFilter = (visibilityFilter) => {
     }
 };
 
-export const addNote = (note)=>{
+export const addNote = (note) => {
     return {
         type: constants.ADD_NOTE,
         id: note.id,
@@ -32,9 +32,24 @@ export const addNote = (note)=>{
     }
 };
 
-export const removeNote = (id)=>{
+export const removeNote = (id) => {
     return {
         type: constants.REMOVE_NOTE,
         id: id,
+    }
+};
+
+export const login = (user) => {
+    return {
+        type: constants.LOGIN,
+        email: user.email,
+        password: user.password,
+    }
+};
+
+export const logout = (user)=>{
+    return {
+        type: constants.LOGOUT,
+        email: user.email,
     }
 };

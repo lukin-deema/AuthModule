@@ -8,7 +8,11 @@ module.exports = keyMirror({
     VISIBLE_DELETED: null,
     TOGGLE_USERS: null,
 
+    LOGIN: null,
+    LOGOUT: null,
+
     KEY_USERS: null,
+    KEY_CURRENT_USER: null,
     KEY_NOTE: null,
 
     ADD_NOTE: null,
