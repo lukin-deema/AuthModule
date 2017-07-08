@@ -10,7 +10,7 @@ export const addNewUser = (user) => {
     }
 };
 
-export const toggleVisibility = (id)=>{
+export const toggleVisibility = (id) => {
     return {
         type: constants.TOGGLE_USERS,
         id
@@ -21,5 +21,41 @@ export const toggleUserFilter = (visibilityFilter) => {
     return {
         type: constants.SET_VISIBILITY_FILTER,
         visibilityFilter
+    }
+};
+
+export const addNote = (note) => {
+    return {
+        type: constants.ADD_NOTE,
+        id: note.id,
+        text: note.text,
+    }
+};
+
+export const removeNote = (id) => {
+    return {
+        type: constants.REMOVE_NOTE,
+        id: id,
+    }
+};
+
+export const login = (user) => {
+    return {
+        type: constants.LOGIN,
+        email: user.email,
+        password: user.password,
+    }
+};
+
+export const logout = () => {
+    return {
+        type: constants.LOGOUT
+    }
+};
+
+export const nextRoute = (nextRoute) => {
+    return {
+        type: constants.CHANGE_ROUTE,
+        nextRoute
     }
 };

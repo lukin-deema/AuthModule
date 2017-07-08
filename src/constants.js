@@ -1,9 +1,22 @@
+import keyMirror from 'keymirror';
 
-export const REGISTER_NEW = "REGISTER_NEW";
+module.exports = keyMirror({
+    REGISTER_NEW: null,
+    SET_VISIBILITY_FILTER: null,
+    VISIBLE_ALL: null,
+    VISIBLE_REGISTERED: null,
+    VISIBLE_DELETED: null,
+    TOGGLE_USERS: null,
 
-export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
-export const VISIBLE_ALL = 'VISIBLE_ALL';
-export const VISIBLE_REGISTERED = 'VISIBLE_REGISTERED';
-export const VISIBLE_DELETED = 'VISIBLE_DELETED';
+    LOGIN: null,
+    LOGOUT: null,
 
-export const TOGGLE_USERS = 'TOGGLE_USERS';
+    CHANGE_ROUTE: null,
+
+    KEY_USERS: null,
+    KEY_CURRENT_USER: null,
+    KEY_NOTE: null,
+
+    ADD_NOTE: null,
+    REMOVE_NOTE: null,
+});
