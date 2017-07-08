@@ -54,9 +54,8 @@
     "style-loader": "^0.13.0"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base --hot --inline -src --port 8082 ",
+    "dev": "webpack-dev-server --content-base --hot --inline -src --port 8083 ",
     "webpack": "webpack",
-    "server2": "node wServer.js",
     "server": "node server.js"
   },
   "author": "deema-lukin",

@@ -4,7 +4,6 @@ import NotesListConnected from '../containers/NotesList';
 
 const NotesRoute = () => (
     <div>
-        <div>NotesRoute</div>
         <NotesAddConnected/>
         <NotesListConnected/>
     </div>

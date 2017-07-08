@@ -4,8 +4,8 @@ import UsersList from '../containers/UsersList';
 
 const LoginUserRoute = () => (
     <div>
-        <div>LoginUserRoute</div>
         <UsersLoginConnected/>
+        <hr/>
         <UsersList/>
     </div>
 );
