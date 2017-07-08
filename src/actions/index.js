@@ -47,9 +47,15 @@ export const login = (user) => {
     }
 };
 
-export const logout = (user) => {
+export const logout = () => {
     return {
-        type: constants.LOGOUT,
-        email: user.email,
+        type: constants.LOGOUT
+    }
+};
+
+export const nextRoute = (nextRoute) => {
+    return {
+        type: constants.CHANGE_ROUTE,
+        nextRoute
     }
 };

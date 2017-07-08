@@ -11,6 +11,8 @@ module.exports = keyMirror({
     LOGIN: null,
     LOGOUT: null,
 
+    CHANGE_ROUTE: null,
+
     KEY_USERS: null,
     KEY_CURRENT_USER: null,
     KEY_NOTE: null,

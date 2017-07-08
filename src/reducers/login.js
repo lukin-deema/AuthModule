@@ -6,7 +6,7 @@ const login = (state = userApi.getCurrentUser(), action) => {
         case constants.LOGIN:
             return userApi.login(action.email, action.password);
         case constants.LOGOUT:
-            return userApi.logout(action.email);
+            return userApi.logout();
         default:
             return state;
     }

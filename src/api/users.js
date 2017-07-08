@@ -42,6 +42,7 @@ function logout() {
     localStore.remove(constants.KEY_CURRENT_USER);
     return false;
 }
+
 function getCurrentUser() {
     return localStore.load(constants.KEY_CURRENT_USER, false);
 }
