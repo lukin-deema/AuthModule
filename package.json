@@ -53,7 +53,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base --hot --inline -src --port 8082 ",
     "webpack": "webpack",
-    "server": "node wServer.js"
+    "server": "node server.js"
   },
   "author": "deema-lukin",
   "license": "ISC",
