@@ -3,7 +3,7 @@ const http = require('http');
 
 const app = express();
 app.set('port', process.env.PORT || 8082);
-app.use('/', express.static('public'));
+app.use('/', express.static(__dirname+'/public'));
 
 const server = http.createServer(app);
 
