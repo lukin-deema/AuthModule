@@ -1,8 +1,13 @@
 const express = require('express');
 const http = require('http');
+const bodyParser = require('body-parser');
 
 const app = express();
 app.set('port', process.env.PORT || 8082);
+app.use(bodyParser.json({ limit: '10mb' }));
+
+
+app.use('/api', require('./server/routes'));
 app.use('/', express.static('public'));
 
 const server = http.createServer(app);
